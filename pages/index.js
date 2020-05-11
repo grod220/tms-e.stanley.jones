@@ -26,6 +26,7 @@ export default function Index() {
           box-sizing: border-box;
           font-size: 2.2rem;
           font-family: 'Vollkorn', serif;
+          font-display: swap;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
