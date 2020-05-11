@@ -18,7 +18,5 @@ jobs:
       run: yarn install
     - name: Build & export to static html/css/js
       run: yarn build
-    - name: Install Firebase tools
-      run: yarn global add firebase-tools
     - name: Deploy to Firebase Hosting
-      run: firebase-tools deploy --token $FIREBASE_TOKEN
+      run: yarn deploy

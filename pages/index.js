@@ -9,7 +9,7 @@ export default function Index() {
       </Head>
       <Navigation />
       <main>
-        This is body stuff
+        Hello world!
       </main>
 
       <style jsx global>{`

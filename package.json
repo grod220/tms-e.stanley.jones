@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "export": "",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
     "start": "next start"
   },
   "dependencies": {
@@ -17,7 +17,8 @@
   "devDependencies": {
     "@types/node": "^13.13.5",
     "@types/react": "^16.9.35",
-    "typescript": "^3.8.3",
-    "babel-plugin-styled-components": "^1.8.0"
+    "babel-plugin-styled-components": "^1.8.0",
+    "firebase-tools": "^8.2.0",
+    "typescript": "^3.8.3"
   }
 }
