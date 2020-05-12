@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { media } from '../../utilities/media';
 import Highlight from '../shared/highlight';
 
+import NormalMenu from './tms-menu.pdf';
+import VeganMenu from './primo-vegan-menu.jpg';
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -23,13 +26,13 @@ const TopText = () => (
       Hand made like your Mamma and Nonna’s. All of our dishes are made with the highest quality meat and fresh
       ingredients. Also! There are plenty of options for vegan &amp; glutten free (*gf) guests.{' '}
       <Highlight i>
-        <a href="/static/menu/tms-menu.pdf" target="_blank" rel="noopener noreferrer">
+        <a href={NormalMenu} target="_blank" rel="noopener noreferrer">
           Full Menu
         </a>
       </Highlight>{' '}
       -{' '}
       <Highlight i>
-        <a href="/static/menu/primo-vegan-menu.jpg" target="_blank" rel="noopener noreferrer">
+        <a href={VeganMenu} target="_blank" rel="noopener noreferrer">
           Primo Vegan Menu
         </a>
       </Highlight>
