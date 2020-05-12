@@ -100,18 +100,11 @@ const LoadingAnimation = styled.div`
 
 const LivePost = () => {
   const [post, setPost] = useState({ link: 'https://www.facebook.com/meatballstoppe/' });
-  let { loading, data } = useFetch('https://cors-anywhere.herokuapp.com/', {}, []);
-  if (data) {
-    data = {
-      imageURL:
-        'https://scontent-mia3-1.xx.fbcdn.net/v/t15.5256-10/95665168_2622821591295241_2718985126120783872_n.jpg?_nc_cat=111&_nc_sid=ad6a45&_nc_ohc=ne9U2ZarvSgAX_V0NBx&_nc_ht=scontent-mia3-1.xx&oh=6bc56f9cb3c35e0951d0ab2e9ee03187&oe=5ED622C6',
-      message:
-        'Grand Opening of La Marchetta - tomorrow at 11am!  Homemade comfort delicacies that will take you back to your Nonn...',
-      url: 'https://www.facebook.com/790534394301792/posts/3025425220812687/',
-    };
-  } else {
-    data = {};
-  }
+  const { loading, data = {} } = useFetch(
+    'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/MostRecentPost',
+    {},
+    [],
+  );
 
   return (
     <div>
