@@ -31,7 +31,9 @@ export default function Navigation() {
         </NavLinks>
         <Logo>
           <Link href="/">
-            <img src="/static/navigation/logo.svg" alt="The Meatball Stoppe logo" />
+            <a>
+              <img src="/static/navigation/logo.svg" alt="The Meatball Stoppe logo" />
+            </a>
           </Link>
         </Logo>
         <NavLinks>
