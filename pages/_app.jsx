@@ -1,3 +1,4 @@
+import React from 'react';
 import '../public/global-styles.css';
 import Navigation from '../components/navigation';
 
