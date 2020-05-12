@@ -16,8 +16,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: Install all packages
+      - name: Install app packages
         run: yarn install
+      - name: Install firebase func packages
+        run: cd functions/ && yarn install && cd ..
       - name: Build & export to static html/css/js
         run: yarn build
       - name: Deploy to Firebase Hosting
