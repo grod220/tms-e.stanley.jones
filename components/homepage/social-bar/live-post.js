@@ -99,20 +99,19 @@ const LoadingAnimation = styled.div`
 `;
 
 const LivePost = () => {
-  const [post, setPost] = useState({ link: 'https://www.facebook.com/meatballstoppe/' });
   const { loading, data = {} } = useFetch(
-    'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/MostRecentPost',
+    'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/routes/most-recent-post',
     {},
     [],
   );
 
   return (
     <div>
-      <a rel="noopener noreferrer" target="_blank" href={post.link}>
+      <a rel="noopener noreferrer" target="_blank" href={data.permalink_url}>
         <OuterBox>
           <SocialWrapper>
             <LoadingAnimation activated={loading} />
-            <FBImage src={data.imageURL} activated={!loading} />
+            <FBImage src={data.full_picture} activated={!loading} />
             <ContentBlock>
               <Caption>{data.message}</Caption>
               <SmallFBIcon>

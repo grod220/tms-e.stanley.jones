@@ -1,9 +1,14 @@
-import * as functions from 'firebase-functions';
+import { config, https, Request, Response } from 'firebase-functions';
+import * as express from 'express';
 import axios, { AxiosRequestConfig } from 'axios';
+const cors = require('cors');
 
 require('dotenv').config();
 
-const FB_ACCESS_TOKEN = functions.config().secrets.fb_access_token || process.env.FB_ACCESS_TOKEN;
+const FB_ACCESS_TOKEN = config().secrets.fb_access_token || process.env.FB_ACCESS_TOKEN;
+
+const app = express();
+app.use(cors({ origin: true }));
 
 interface fbPost {
   permalink_url: string;
@@ -29,7 +34,9 @@ const getMostRecentPost = async () => {
   return postInfo;
 };
 
-export const MostRecentPost = functions.https.onRequest(async (request, response) => {
+app.get('/most-recent-post', async (req: Request, res: Response) => {
   const mostRecentPost = await getMostRecentPost();
-  response.send(mostRecentPost);
+  res.send(mostRecentPost);
 });
+
+exports.routes = https.onRequest(app);
