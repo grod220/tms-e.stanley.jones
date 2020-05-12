@@ -101,9 +101,9 @@ const LoadingAnimation = styled.div`
 const LivePost = () => {
   const { loading, data = {} } = useFetch(
     'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/routes/most-recent-post',
-    {},
     [],
   );
+  console.log(data);
 
   return (
     <div>
