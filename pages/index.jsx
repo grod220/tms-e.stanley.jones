@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Overlay from '../components/homepage/modal-overlay/modal-overlay';
 import BigHero from '../components/homepage/hero/big-hero';
+import OrderBar from '../components/homepage/order-bar';
+import SocialBar from '../components/homepage/social-bar/social-bar';
 
 export default function Index() {
   return (
@@ -14,6 +16,8 @@ export default function Index() {
       </Head>
       {/*<Overlay />*/}
       <BigHero />
+      <OrderBar />
+      <SocialBar />
     </div>
   );
 }

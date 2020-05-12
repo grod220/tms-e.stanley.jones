@@ -4,7 +4,7 @@ module.exports = {
     // Perform customizations to webpack config
     // Important: return the modified config
     config.module.rules.push({
-      test: /\.(jpg|jpeg|svg|pdf)$/,
+      test: /\.(jpg|jpeg|svg|pdf|png)$/,
       use: [
         {
           loader: 'file-loader',
