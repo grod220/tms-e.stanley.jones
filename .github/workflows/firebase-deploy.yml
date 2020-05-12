@@ -2,7 +2,7 @@ name: Firebase deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build-and-deploy:
@@ -11,14 +11,14 @@ jobs:
     env:
       FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-       node-version: '12.x'
-    - name: Install all packages
-      run: yarn install
-    - name: Build & export to static html/css/js
-      run: yarn build
-    - name: Deploy to Firebase Hosting
-      run: yarn deploy
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install all packages
+        run: yarn install
+      - name: Build & export to static html/css/js
+        run: yarn build
+      - name: Deploy to Firebase Hosting
+        run: yarn deploy

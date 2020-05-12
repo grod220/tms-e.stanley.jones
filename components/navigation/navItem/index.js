@@ -1,5 +1,5 @@
-import React from "react";
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 const NavItem = ({ children, path, action }) => (
@@ -12,7 +12,7 @@ const NavItem = ({ children, path, action }) => (
 
 NavItem.propTypes = {
   path: PropTypes.string,
-  action: PropTypes.func
+  action: PropTypes.func,
 };
 
 export default NavItem;

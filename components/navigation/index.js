@@ -1,16 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import Link from 'next/link';
 
-import NavItem from "./navItem";
-import {
-  NavBar,
-  NavLinks,
-  DismissX,
-  Logo,
-  MobileMoreDetails,
-  MobileNavBar,
-  SubBar
-} from "./navigation-styles";
+import NavItem from './navItem';
+import { NavBar, NavLinks, DismissX, Logo, MobileMoreDetails, MobileNavBar, SubBar } from './navigation-styles';
 
 export default function Navigation() {
   const [mobileMenu, setmMobileMenu] = useState(false);
@@ -44,11 +36,7 @@ export default function Navigation() {
         </Logo>
         <NavLinks>
           <li>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.ladifferenzabakery.com"
-            >
+            <a rel="noopener noreferrer" target="_blank" href="https://www.ladifferenzabakery.com">
               Bakery
             </a>
           </li>

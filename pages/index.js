@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import Navigation from '../components/navigation'
+import Head from 'next/head';
+import Navigation from '../components/navigation';
 
 export default function Index() {
   return (
@@ -8,9 +8,7 @@ export default function Index() {
         <title>Homepage</title>
       </Head>
       <Navigation />
-      <main>
-        Hello world!
-      </main>
+      <main>Hello world!</main>
     </div>
-  )
+  );
 }
