@@ -1,4 +1,4 @@
-import '../public/static/global-styles.css';
+import '../public/global-styles.css';
 import Navigation from '../components/navigation';
 
 // This default export is required in a new `pages/_app.js` file.

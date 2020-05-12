@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { media } from '../../utilities/media';
 
 import SubBarText from './subBarText';
+import MobileMenuBackground from './images/mobile_menu.jpg';
 
 export const NavBar = styled.ul`
   list-style: none;
@@ -28,7 +29,7 @@ export const NavBar = styled.ul`
     box-shadow: 20px 0px 54px -4px rgba(0,0,0,1);
     flex-direction: column;
     z-index: 1000;
-    background: url("/static/navigation/mobile_menu.jpg") center top;
+    background: url(${MobileMenuBackground}) center top;
     background-size: cover;
     transition: left .25s ease-in;
 

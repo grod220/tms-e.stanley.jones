@@ -3,6 +3,9 @@ import Link from 'next/link';
 
 import NavItem from './navItem';
 import { NavBar, NavLinks, DismissX, Logo, MobileMoreDetails, MobileNavBar, SubBar } from './navigation-styles';
+import TmsLogo from './images/logo.svg';
+import HamburgerIcon from './images/hamburger.svg';
+import MiniLogo from './images/minilogo.svg';
 
 export default function Navigation() {
   const [mobileMenu, setmMobileMenu] = useState(false);
@@ -32,7 +35,7 @@ export default function Navigation() {
         <Logo>
           <Link href="/">
             <a>
-              <img src="/static/navigation/logo.svg" alt="The Meatball Stoppe logo" />
+              <img src={TmsLogo} alt="The Meatball Stoppe logo" />
             </a>
           </Link>
         </Logo>
@@ -50,10 +53,10 @@ export default function Navigation() {
       </NavBar>
       <MobileNavBar>
         <span onClick={showMobileMenu}>
-          <img src="/static/navigation/hamburger.svg" alt="Menu icon" />
+          <img src={HamburgerIcon} alt="Menu icon" />
         </span>
         <Link href="/">
-          <img src="/static/navigation/minilogo.svg" alt="The Meatball Stoppe logo" />
+          <img src={MiniLogo} alt="The Meatball Stoppe logo" />
         </Link>
         <div />
       </MobileNavBar>
