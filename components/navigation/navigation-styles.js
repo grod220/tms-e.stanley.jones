@@ -61,7 +61,6 @@ export const Logo = styled.div`
   margin: -3.5rem 0 0 0;
   width: 19rem;
   z-index: 1;
-  transition: all 0.7s;
 
   ${media.tablet`
     margin: -3rem 0 0 0;
