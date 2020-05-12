@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { media } from "../../shared-utilities/media";
+import { media } from "../../utilities/media";
 
 import SubBarText from "./subBarText";
 
