@@ -2,6 +2,7 @@ import React from 'react';
 import '../public/global-styles.css';
 import Navigation from '../components/navigation';
 import { initializeGoogleAnalytics } from '../utilities/google-analytics';
+import Head from 'next/head';
 
 initializeGoogleAnalytics();
 
@@ -9,6 +10,9 @@ initializeGoogleAnalytics();
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+      </Head>
       <Navigation />
       <Component {...pageProps} />
     </>
