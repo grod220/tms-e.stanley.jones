@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
-import styled from 'styled-components';
+import React from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 import MapStyles from './map-styles.json';
 import CustomMarker from './marker.png';
 
-const MapStyle = styled.div`
-  height: 46rem;
-  margin-top: 6rem;
-`;
+const MAPS_API_KEY = 'AIzaSyALcryb0lm_s__qtyYX16o1IjdeDrt2NXc';
 
 const directionsLink = () => {
   window.open(
@@ -17,29 +13,17 @@ const directionsLink = () => {
   );
 };
 
-const RestaurantMap = withScriptjs(
-  withGoogleMap((props) => (
+const Map = () => (
+  <LoadScript googleMapsApiKey={MAPS_API_KEY}>
     <GoogleMap
-      defaultZoom={16}
-      defaultCenter={{ lat: 28.5394327, lng: -81.2868005 }}
-      defaultOptions={{ styles: MapStyles, disableDefaultUI: true, scrollwheel: false }}
+      zoom={16}
+      center={{ lat: 28.5394327, lng: -81.2868005 }}
+      options={{ styles: MapStyles, disableDefaultUI: true, scrollwheel: false }}
+      mapContainerStyle={{ height: '46rem', marginTop: '6rem' }}
     >
       <Marker position={{ lat: 28.5394327, lng: -81.2868005 }} icon={CustomMarker} onClick={directionsLink} />
     </GoogleMap>
-  )),
+  </LoadScript>
 );
 
-class Map extends Component {
-  render() {
-    return (
-      <RestaurantMap
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyALcryb0lm_s__qtyYX16o1IjdeDrt2NXc&v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<MapStyle />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
-    );
-  }
-}
-
-export default Map;
+export default React.memo(Map);
