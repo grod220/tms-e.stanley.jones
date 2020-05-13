@@ -3,6 +3,7 @@ import Overlay from '../components/homepage/modal-overlay/modal-overlay';
 import BigHero from '../components/homepage/hero/big-hero';
 import OrderBar from '../components/homepage/order-bar';
 import SocialBar from '../components/homepage/social-bar/social-bar';
+import MenuPreview from '../components/homepage/menu-preview/menu-preview';
 
 export default function Index() {
   return (
@@ -18,6 +19,7 @@ export default function Index() {
       <BigHero />
       <OrderBar />
       <SocialBar />
+      <MenuPreview />
     </div>
   );
 }
