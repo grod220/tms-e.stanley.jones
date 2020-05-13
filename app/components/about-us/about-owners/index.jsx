@@ -63,14 +63,14 @@ const AboutOwners = () => (
     </Quote>
     <OwnersPic />
     <TwoDescriptions>
-      {/*  <Description*/}
-      {/*    name="Isabella"*/}
-      {/*    text="Isabella is a co-owner of The Meatball Stoppe. She is a first generation American born of Italian decent in Brooklyn, New York. Isabella moved to Orlando in 1970, where she was raised in her family’s restaurant businesses. Isabella’s love of cooking came from her namesake, her grandmother, who lived in the family home and had a huge influence on Isabella’s passion for Italian traditions and food."*/}
-      {/*  />*/}
-      {/*  <Description*/}
-      {/*    name="Jeff"*/}
-      {/*    text="Jeff Morgia is CEO and co-Owner of The Meatball Stoppe. Jeff has been in the food industry 45+ years. He spent 12 years with the Sheraton Corporation and later joined Burger King corporation. Jeff retired after 27 years to join Isabella full time in the family catering company, eventually founding and opening The Meatball Stoppe."*/}
-      {/*  />*/}
+      <Description
+        name="Isabella"
+        text="Isabella is a co-owner of The Meatball Stoppe. She is a first generation American born of Italian decent in Brooklyn, New York. Isabella moved to Orlando in 1970, where she was raised in her family’s restaurant businesses. Isabella’s love of cooking came from her namesake, her grandmother, who lived in the family home and had a huge influence on Isabella’s passion for Italian traditions and food."
+      />
+      <Description
+        name="Jeff"
+        text="Jeff Morgia is CEO and co-Owner of The Meatball Stoppe. Jeff has been in the food industry 45+ years. He spent 12 years with the Sheraton Corporation and later joined Burger King corporation. Jeff retired after 27 years to join Isabella full time in the family catering company, eventually founding and opening The Meatball Stoppe."
+      />
     </TwoDescriptions>
   </Container>
 );

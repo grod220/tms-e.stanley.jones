@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import Highlight from './single-description';
+import Highlight from '../../shared/highlight';
 
 const Description = ({ name, text }) => (
   <div>
@@ -11,10 +10,5 @@ const Description = ({ name, text }) => (
     <p>{text}</p>
   </div>
 );
-
-Description.propTypes = {
-  name: PropTypes.string,
-  text: PropTypes.string,
-};
 
 export default Description;
