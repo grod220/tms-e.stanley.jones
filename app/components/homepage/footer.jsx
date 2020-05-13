@@ -41,7 +41,7 @@ const Footer = () => (
       <ul>
         <NavItem path="/menu">Menu</NavItem>
         <NavItem path="/catering">Catering</NavItem>
-        <NavItem path="/aboutus">About Us</NavItem>
+        <NavItem path="/about-us">About Us</NavItem>
         <NavItem path="/media">Media</NavItem>
       </ul>
       <ul>

@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import TopText from '../components/menu/top-text';
 import ShortHero from '../components/shared/short-hero';

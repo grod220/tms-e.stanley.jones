@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import Overlay from '../components/homepage/modal-overlay';
 import BigHero from '../components/homepage/big-hero';

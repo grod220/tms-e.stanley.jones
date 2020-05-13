@@ -28,7 +28,7 @@ export default function Navigation() {
           <NavItem path="/menu" action={hideMobileMenu}>
             Menu
           </NavItem>
-          <NavItem path="/aboutus" action={hideMobileMenu}>
+          <NavItem path="/about-us" action={hideMobileMenu}>
             About Us
           </NavItem>
         </NavLinks>
