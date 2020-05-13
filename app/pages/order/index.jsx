@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 
-import ShortHero from '../components/shared/short-hero';
-import MeatballHero from '../components/order/five-ball.jpg';
-import OrderOnline from '../components/order';
+import ShortHero from '../../components/shared/short-hero';
+import MeatballHero from '../../components/order/five-ball.jpg';
+import OrderOnline from '../../components/order';
 
-export default function Order() {
+export default function OrderIndex() {
   return (
     <div>
       <Head>
