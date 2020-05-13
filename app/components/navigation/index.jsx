@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-import NavItem from './navItem';
+import NavItem from './nav-item';
 import { NavBar, NavLinks, DismissX, Logo, MobileMoreDetails, MobileNavBar, SubBar } from './navigation-styles';
 import TmsLogo from './images/logo.svg';
 import HamburgerIcon from './images/hamburger.svg';

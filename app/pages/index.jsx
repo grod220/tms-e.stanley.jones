@@ -7,6 +7,8 @@ import MenuPreview from '../components/homepage/menu-preview';
 import TestimonialTaster from '../components/homepage/testimonial-taster';
 import LaDifferenzaPromo from '../components/homepage/la-differenza-promo';
 import Map from '../components/homepage/map';
+import Passion from '../components/homepage/passion';
+import Footer from '../components/homepage/footer';
 
 export default function Index() {
   return (
@@ -26,6 +28,8 @@ export default function Index() {
       <TestimonialTaster />
       <LaDifferenzaPromo />
       <Map />
+      <Passion />
+      <Footer />
     </div>
   );
 }
