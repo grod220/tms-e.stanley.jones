@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import FBSmallIcon from './images/fblogo.svg';
 import { useFetch } from 'use-http';
@@ -98,20 +98,28 @@ const LoadingAnimation = styled.div`
   }
 `;
 
+const loadImageIntoMemory = (imageUrl, setLoaded) => {
+  if (!imageUrl) return;
+  const img = new Image();
+  img.src = imageUrl;
+  img.onload = () => setLoaded(true);
+};
+
 const LivePost = () => {
-  const { loading, data = {} } = useFetch(
+  const { data = {} } = useFetch(
     'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/routes/most-recent-post',
     [],
   );
-  console.log(data);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  useEffect(() => loadImageIntoMemory(data.full_picture, setImageLoaded), [data.full_picture]);
 
   return (
     <div>
       <a rel="noopener noreferrer" target="_blank" href={data.permalink_url}>
         <OuterBox>
           <SocialWrapper>
-            <LoadingAnimation activated={loading} />
-            <FBImage src={data.full_picture} activated={!loading} />
+            <LoadingAnimation activated={!imageLoaded} />
+            <FBImage src={data.full_picture} activated={imageLoaded} />
             <ContentBlock>
               <Caption>{data.message}</Caption>
               <SmallFBIcon>
