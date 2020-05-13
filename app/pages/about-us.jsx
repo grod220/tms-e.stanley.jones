@@ -8,7 +8,7 @@ import DiningRoom from '../components/about-us/dining-room';
 import AboutOwners from '../components/about-us/about-owners';
 import GivingBack from '../components/about-us/giving-back';
 
-export default function Menu() {
+export default function AboutUs() {
   return (
     <div>
       <Head>
