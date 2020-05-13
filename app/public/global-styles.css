@@ -20,5 +20,9 @@ a {
   color: inherit;
 }
 
+button {
+  font-family: 'Vollkorn', serif;
+}
+
 /* Should add this to headings globally */
 /* font-family: 'Dancing Script', cursive; */

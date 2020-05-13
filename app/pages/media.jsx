@@ -8,7 +8,7 @@ import NewsOutlets from '../components/media/news-outlets';
 import VideoClips from '../components/media/video-clips';
 import MoreVidsText from '../components/media/more-vids-text';
 
-export default function Menu() {
+export default function Media() {
   return (
     <div>
       <Head>
