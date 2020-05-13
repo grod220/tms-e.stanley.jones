@@ -6,6 +6,7 @@ import SocialBar from '../components/homepage/social-bar';
 import MenuPreview from '../components/homepage/menu-preview';
 import TestimonialTaster from '../components/homepage/testimonial-taster';
 import LaDifferenzaPromo from '../components/homepage/la-differenza-promo';
+import Map from '../components/homepage/map';
 
 export default function Index() {
   return (
@@ -24,6 +25,7 @@ export default function Index() {
       <MenuPreview />
       <TestimonialTaster />
       <LaDifferenzaPromo />
+      <Map />
     </div>
   );
 }
