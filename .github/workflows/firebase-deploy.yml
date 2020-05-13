@@ -8,6 +8,9 @@ jobs:
   firebase-hosting:
     name: Firebase Hosting Deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     env:
       FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
     steps:
@@ -16,8 +19,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "10.x"
-      - name: Get into app dir
-        run: cd app
       - name: Install app packages
         run: yarn install
       - name: Build & export to static html/css/js
@@ -28,6 +29,9 @@ jobs:
   firebase-functions:
     name: Firebase Functions Deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./functions
     env:
       FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
     steps:
@@ -36,8 +40,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "10.x"
-      - name: Get into functions dir
-        run: cd functions/
       - name: Install firebase func packages
         run: yarn install
       - name: Typescript build
