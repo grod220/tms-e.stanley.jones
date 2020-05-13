@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { observer } from "mobx-react-lite";
+import React from 'react';
+import styled from 'styled-components';
+import { observer } from 'mobx-react-lite';
 
 const WidgetWrapper = styled.div`
   position: relative;
@@ -29,25 +29,23 @@ const InputEl = styled.input`
   padding: 26px 25px 0 10px;
   font-size: 18px;
   font-family: vollkorn;
-  ${({ hasError }) => hasError && "border: 2px #ff1310 dotted;"}
+  ${({ hasError }) => hasError && 'border: 2px #ff1310 dotted;'}
 `;
 
-const FulfillmentInput = observer(
-  ({ title, store, field, error, ...others }) => {
-    return (
-      <WidgetWrapper>
-        {error && <ErrorMessage>{error}</ErrorMessage>}
-        <LabelHelper>{title}</LabelHelper>
-        <InputEl
-          {...others}
-          hasError={Boolean(error)}
-          onChange={e => (store[field] = e.target.value)}
-          value={store[field] || ""}
-          required
-        />
-      </WidgetWrapper>
-    );
-  }
-);
+const FulfillmentInput = observer(({ title, store, field, error, ...others }) => {
+  return (
+    <WidgetWrapper>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
+      <LabelHelper>{title}</LabelHelper>
+      <InputEl
+        {...others}
+        hasError={Boolean(error)}
+        onChange={(e) => (store[field] = e.target.value)}
+        value={store[field] || ''}
+        required
+      />
+    </WidgetWrapper>
+  );
+});
 
 export default FulfillmentInput;

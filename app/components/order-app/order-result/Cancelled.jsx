@@ -1,9 +1,9 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import styled from "styled-components";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 
-import ShortHero from "../../shortHero";
-import FamilyStorePic from "../../../aboutUs/familyDronePic.jpg";
+import ShortHero from '../../shortHero';
+import FamilyStorePic from '../../../aboutUs/familyDronePic.jpg';
 
 const Container = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const Cancelled = () => (
     <Container>
       <div>
         <Headline>
-          Looks like your order was cancelled{" "}
+          Looks like your order was cancelled{' '}
           <span role="img" aria-label="red x">
             ❌
           </span>

@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import VeggieSVG from "./veggie-mark.svg";
-import GlutenFreePNG from "./gluten-free-icon.png";
+import VeggieSVG from './veggie-mark.svg';
+import GlutenFreePNG from './gluten-free-icon.png';
 
 const Container = styled.div`
   position: absolute;
@@ -30,8 +30,7 @@ const Legend = () => {
         <img width="16px" src={VeggieSVG} alt="Veggie options" /> = Veg options
       </Veg>
       <GF>
-        <img width="21px" src={GlutenFreePNG} alt="gluten-free options" /> =
-        Gluten-free options
+        <img width="21px" src={GlutenFreePNG} alt="gluten-free options" /> = Gluten-free options
       </GF>
     </Container>
   );
