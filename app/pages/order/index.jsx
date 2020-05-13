@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 
 import ShortHero from '../../components/shared/short-hero';
-import MeatballHero from '../../components/order/five-ball.jpg';
-import OrderOnline from '../../components/order';
+import MeatballHero from '../../components/order-online/five-ball.jpg';
+import OrderOnline from '../../components/order-online';
 
 export default function OrderIndex() {
   return (

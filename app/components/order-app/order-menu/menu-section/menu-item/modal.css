@@ -1,0 +1,47 @@
+.modal-box {
+  height: fit-content;
+  max-height: calc(100vh - 50px);
+  max-width: 620px;
+  margin: auto;
+  padding: 0;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 1px;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 25px, rgba(0, 0, 0, 0.2) 0px 4px 20px;
+}
+
+.modal-overlay {
+  background-color: rgba(12, 12, 12, 0.75);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  /* disables background scroll. Disabling now so the page background doesn't jump */
+  /*overflow: hidden;*/
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 80ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}

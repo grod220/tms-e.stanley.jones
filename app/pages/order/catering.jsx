@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import ShortHero from '../../components/shared/short-hero';
-import CateringHero from '../../components/order/baked-pasta.jpg';
+import CateringHero from '../../components/order-online/baked-pasta.jpg';
 
 export default function Catering() {
   return (
