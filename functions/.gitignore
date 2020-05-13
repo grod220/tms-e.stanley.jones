@@ -6,7 +6,3 @@
 typings/
 
 node_modules/
-
-.env
-
-firebase-debug.log

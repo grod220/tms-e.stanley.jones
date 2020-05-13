@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
+    "deploy": "firebase deploy --only hosting --token $FIREBASE_TOKEN",
     "start": "next start",
-    "format": "prettier --write ."
+    "format": "prettier --write .."
   },
   "dependencies": {
     "date-fns": "^2.13.0",

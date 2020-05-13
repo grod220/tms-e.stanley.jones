@@ -1,12 +1,12 @@
-name: Firebase deploy
+name: Firebase hosting + functions deploy
 
 on:
   push:
     branches: [master]
 
 jobs:
-  build-and-deploy:
-    name: Build & Deploy
+  firebase-hosting:
+    name: Firebase Hosting Deploy
     runs-on: ubuntu-latest
     env:
       FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
@@ -15,12 +15,32 @@ jobs:
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: "10.x"
+      - name: Get into app dir
+        run: cd app
       - name: Install app packages
         run: yarn install
-      - name: Install firebase func packages
-        run: cd functions/ && yarn install && cd ..
       - name: Build & export to static html/css/js
         run: yarn build
-      - name: Deploy to Firebase Hosting
+      - name: Deploy to Firebase
+        run: yarn deploy
+
+  firebase-functions:
+    name: Firebase Functions Deploy
+    runs-on: ubuntu-latest
+    env:
+      FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
+      - name: Get into functions dir
+        run: cd functions/
+      - name: Install firebase func packages
+        run: yarn install
+      - name: Typescript build
+        run: yarn build
+      - name: Deploy to Firebase
         run: yarn deploy
