@@ -20,7 +20,7 @@ class OrderStore {
 
   @observable orderType;
   @observable activeTab;
-  fulfillmentOption;
+  @observable fulfillmentOption;
 
   _validatedNumberOfGuests = 0;
   get numberOfGuests() {
@@ -32,11 +32,11 @@ class OrderStore {
     }
   }
 
-  contactName;
-  contactNumber;
-  specialInstructions;
-  shoppingCart = [];
-  tip = 0;
+  @observable contactName;
+  @observable contactNumber;
+  @observable specialInstructions;
+  @observable shoppingCart = [];
+  @observable tip = 0;
 
   get tipPercent() {
     return ((this.tip / Number(this.subTotal)) * 100).toFixed();
@@ -135,17 +135,11 @@ class OrderStore {
 }
 
 decorate(OrderStore, {
-  shoppingCart: observable,
-  fulfillmentOption: observable,
-  contactName: observable,
-  contactNumber: observable,
   deliveryLocation: observable,
   subTotal: computed,
-  tip: observable,
   grandTotal: computed,
   tax: computed,
   tipPercent: computed,
-  specialInstructions: observable,
   inputFieldsReady: computed,
   deliveryFee: computed,
   _deliveryMiles: observable,
