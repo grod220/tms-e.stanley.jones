@@ -4,8 +4,8 @@ import { formatCart, formatPaymentIntentObj, validateOrderOrThrow } from './orde
 const bodyParser = require('body-parser');
 import Stripe from 'stripe';
 
-const STRIPE_SECRET = config().secrets.stripe_prod_secret || process.env.STRIPE_PROD_SECRET;
-// const STRIPE_SECRET = process.env.STRIPE_DEV_SECRET;
+// const STRIPE_SECRET = config().secrets.stripe_prod_secret;
+const STRIPE_SECRET = config().secrets.stripe_dev_secret;
 const stripe = new Stripe(STRIPE_SECRET, { apiVersion: '2020-03-02' });
 
 const app = express();

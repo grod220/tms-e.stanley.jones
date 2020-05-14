@@ -28,8 +28,8 @@ export default async function handleCheckoutRequest(showSpinner, showError) {
   console.log(serializeOrderStore(OrderStore));
   try {
     const res = await fetch(
-      // "http://localhost:5000/the-meatball-stoppe/us-central1/function/stripe/order",
-      'https://us-central1-the-meatball-stoppe.cloudfunctions.net/function/stripe/order',
+      // 'http://localhost:5001/tms-e-stanley-jones/us-central1/function/stripe/order',
+      'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/function/stripe/order',
       {
         headers: {
           'Content-Type': 'application/json',

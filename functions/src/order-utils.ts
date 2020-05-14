@@ -33,7 +33,7 @@ export const formatCart = (
 
   line_items.push({
     name: 'Tax',
-    amount: Number(tax) * 100,
+    amount: Math.round(Number(tax) * 100),
     currency: 'usd',
     quantity: 1,
   });
@@ -41,7 +41,7 @@ export const formatCart = (
   if (deliveryFee) {
     line_items.push({
       name: 'Delivery Fee',
-      amount: Number(deliveryFee) * 100,
+      amount: Math.round(Number(deliveryFee) * 100),
       currency: 'usd',
       quantity: 1,
     });
@@ -51,7 +51,7 @@ export const formatCart = (
     line_items.push({
       name: 'Tip',
       description: 'Thank you! 💙',
-      amount: Number(tip) * 100,
+      amount: Math.round(Number(tip) * 100),
       currency: 'usd',
       quantity: 1,
     });
@@ -117,7 +117,7 @@ export const validateOrderOrThrow = ({
       fulfillmentOption,
     }),
   );
-  const parsedTip = typeof tip === 'string' ? parseFloat(tip) : tip;
+  const parsedTip = typeof tip === 'string' ? Number(tip) : tip;
   if (parsedTip < 0) {
     throw Error(`Tip is less than 0 zero`);
   }
@@ -176,7 +176,7 @@ export const validateOrderOrThrow = ({
     orderSubTotal += menuItemTotal;
   });
 
-  if (Math.floor(parseFloat(tax)) !== Math.floor(orderSubTotal * 0.07)) {
+  if (Math.floor(Number(tax)) !== Math.floor(orderSubTotal * 0.07)) {
     throw Error(`Tax doesn't match on client & server`);
   }
 };

@@ -2,8 +2,7 @@ import { config, Request, Response } from 'firebase-functions';
 import * as express from 'express';
 import axios, { AxiosRequestConfig } from 'axios';
 
-require('dotenv').config();
-const FB_ACCESS_TOKEN = config().secrets.fb_access_token || process.env.FB_ACCESS_TOKEN;
+const FB_ACCESS_TOKEN = config().secrets.fb_access_token;
 
 const app = express();
 
