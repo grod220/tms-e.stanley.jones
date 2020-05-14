@@ -79,7 +79,7 @@ const RedButton = styled(OrderButton)`
 const OrderBar = () => (
   <RedBar>
     <Container>
-      <Link href="/order/">
+      <Link href="/order">
         <a>
           <WhiteButton>Order Online</WhiteButton>
         </a>

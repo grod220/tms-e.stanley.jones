@@ -18,7 +18,7 @@ class OrderStore {
     );
   }
 
-  orderType;
+  @observable orderType;
   activeTab;
   fulfillmentOption;
 
@@ -136,7 +136,7 @@ class OrderStore {
 
 decorate(OrderStore, {
   activeTab: observable,
-  orderType: observable,
+  // orderType: observable,
   shoppingCart: observable,
   fulfillmentOption: observable,
   contactName: observable,
