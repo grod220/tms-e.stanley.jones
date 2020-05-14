@@ -21,7 +21,7 @@ export default function Index() {
           content="An authentic Italian restaurant loved by Guy Fieri & the entire community. Orlando's #1 ranked most family-friendly restaurant by USA Today."
         />
       </Head>
-      {/*<Overlay />*/}
+      <Overlay />
       <BigHero />
       <OrderBar />
       <SocialBar />
