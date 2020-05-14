@@ -22,8 +22,8 @@ class OrderStore {
   @observable activeTab;
   @observable fulfillmentOption;
 
-  _validatedNumberOfGuests = 0;
-  get numberOfGuests() {
+  @observable _validatedNumberOfGuests = 0;
+  @computed get numberOfGuests() {
     return this._validatedNumberOfGuests;
   }
   set numberOfGuests(num) {
@@ -38,22 +38,22 @@ class OrderStore {
   @observable shoppingCart = [];
   @observable tip = 0;
 
-  get tipPercent() {
+  @computed get tipPercent() {
     return ((this.tip / Number(this.subTotal)) * 100).toFixed();
   }
 
-  get subTotal() {
+  @computed get subTotal() {
     return addZero(this.shoppingCart.reduce((acc, item) => acc + item.total, 0).toFixed(2));
   }
 
-  get tax() {
+  @computed get tax() {
     return addZero((Number(this.subTotal) * 0.07).toFixed(2));
   }
 
-  deliveryLocation; // Google Places obj
-  _deliveryMiles;
-  _loadingMiles = false;
-  _errorFromGoogle = false;
+  @observable deliveryLocation; // Google Places obj
+  @observable _deliveryMiles;
+  @observable _loadingMiles = false;
+  @observable _errorFromGoogle = false;
 
   handleDeliverLocationUpdate(googlePlacesObj) {
     this._loadingMiles = true;
@@ -69,7 +69,7 @@ class OrderStore {
       });
   }
 
-  get deliveryFee() {
+  @computed get deliveryFee() {
     if (this._loadingMiles) {
       return 'Calculating cost ⌛';
     }
@@ -105,7 +105,7 @@ class OrderStore {
     }
   }
 
-  get grandTotal() {
+  @computed get grandTotal() {
     let total = Number(this.subTotal) + Number(this.tip) + Number(this.tax);
     if (this.fulfillmentOption === 'delivery' && typeof this.deliveryFee === 'number') {
       total += this.deliveryFee;
@@ -113,7 +113,7 @@ class OrderStore {
     return addZero(total.toFixed(2));
   }
 
-  get inputFieldsReady() {
+  @computed get inputFieldsReady() {
     const baseQualificationsSatisfied =
       Boolean(this.contactName) &&
       Boolean(this.contactNumber) &&
@@ -133,20 +133,5 @@ class OrderStore {
     }
   }
 }
-
-decorate(OrderStore, {
-  deliveryLocation: observable,
-  subTotal: computed,
-  grandTotal: computed,
-  tax: computed,
-  tipPercent: computed,
-  inputFieldsReady: computed,
-  deliveryFee: computed,
-  _deliveryMiles: observable,
-  _loadingMiles: observable,
-  _errorFromGoogle: observable,
-  _validatedNumberOfGuests: observable,
-  numberOfGuests: computed,
-});
 
 export default new OrderStore();
