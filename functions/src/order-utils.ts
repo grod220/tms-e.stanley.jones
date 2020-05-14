@@ -1,5 +1,4 @@
 import Stripe from 'stripe';
-// @ts-ignore
 import StandardMenu from '../../app/components/shared/menu-data/standard-menu';
 // @ts-ignore
 import CateringMenu from '../../app/components/shared/menu-data/catering-menu';
