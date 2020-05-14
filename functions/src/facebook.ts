@@ -1,6 +1,7 @@
 import { config, Request, Response } from 'firebase-functions';
 import * as express from 'express';
 import axios, { AxiosRequestConfig } from 'axios';
+import * as Sentry from '@sentry/node';
 
 const FB_ACCESS_TOKEN = config().secrets.fb_access_token;
 
@@ -31,8 +32,12 @@ const getMostRecentPost = async () => {
 };
 
 app.get('/most-recent-post', async (req: Request, res: Response) => {
-  const mostRecentPost = await getMostRecentPost();
-  res.send(mostRecentPost);
+  try {
+    const mostRecentPost = await getMostRecentPost();
+    res.send(mostRecentPost);
+  } catch (e) {
+    Sentry.captureException(e);
+  }
 });
 
 export default app;

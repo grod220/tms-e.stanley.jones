@@ -3,6 +3,7 @@ import OrderStore from '../stores/order-store';
 import { formatGooglePlacesObj } from '../stores/order-utils';
 import { convert24HourTo12Format, extendedDateFormat } from '../stores/date-utils';
 import { loadStripe } from '@stripe/stripe-js';
+import * as Sentry from '@sentry/browser';
 
 const serializeOrderStore = (orderStore) => {
   const baseObj = toJS(orderStore);
@@ -25,7 +26,6 @@ const serializeOrderStore = (orderStore) => {
 
 export default async function handleCheckoutRequest(showSpinner, showError) {
   showSpinner(true);
-  console.log(serializeOrderStore(OrderStore));
   try {
     const res = await fetch(
       // 'http://localhost:5001/tms-e-stanley-jones/us-central1/function/stripe/order',
@@ -54,6 +54,10 @@ export default async function handleCheckoutRequest(showSpinner, showError) {
   } catch (e) {
     showSpinner(false);
     showError(true);
-    console.log(e);
+    console.error(e);
+    Sentry.captureException({
+      event_id: 'handleCheckoutRequest error',
+      message: `${e} :: OrderStore: ${JSON.stringify(serializeOrderStore(OrderStore))}`,
+    });
   }
 }

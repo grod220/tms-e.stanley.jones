@@ -3,6 +3,7 @@ import * as express from 'express';
 import { formatCart, formatPaymentIntentObj, validateOrderOrThrow } from './order-utils';
 const bodyParser = require('body-parser');
 import Stripe from 'stripe';
+import * as Sentry from '@sentry/node';
 
 const STRIPE_SECRET = config().secrets.stripe_prod_secret;
 // const STRIPE_SECRET = config().secrets.stripe_dev_secret;
@@ -28,6 +29,7 @@ app.post('/order', async (req: Request, res: Response) => {
     const stripeSession = await stripe.checkout.sessions.create(sessionObj);
     res.json(stripeSession);
   } catch (e) {
+    Sentry.captureException(e);
     res.status(500).json({ error: e.toString() });
   }
 });
