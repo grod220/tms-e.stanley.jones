@@ -25,6 +25,7 @@ const serializeOrderStore = (orderStore) => {
 
 export default async function handleCheckoutRequest(showSpinner, showError) {
   showSpinner(true);
+  console.log(serializeOrderStore(OrderStore));
   try {
     const res = await fetch(
       // "http://localhost:5000/the-meatball-stoppe/us-central1/function/stripe/order",

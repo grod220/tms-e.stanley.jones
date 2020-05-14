@@ -1,8 +1,9 @@
 import Stripe from 'stripe';
+import { DishChoices } from '../../app/components/shared/menu-data/menu-types';
+import { OrderRequest, ShoppingCart } from '../../app/components/shared/menu-data/order-types';
+
 import StandardMenu from '../../app/components/shared/menu-data/standard-menu';
-// @ts-ignore
 import CateringMenu from '../../app/components/shared/menu-data/catering-menu';
-import { DishChoices, OrderRequest, ShoppingCart } from '../../app/components/shared/menu-data/order-types';
 
 const formatDescription = (choices: DishChoices): string =>
   Object.values(choices)
