@@ -1131,6 +1131,11 @@
   resolved "https://registry.yarnpkg.com/@react-google-maps/marker-clusterer/-/marker-clusterer-1.8.7.tgz#7b357cc627056231cd63b75cf383246a174605d4"
   integrity sha512-sJf5rhBVcykCZ5dmBCeoScRpXGq10KsDe+9AaztLTltaJaHtIV3oL6JMmUHWV0TA3IN69kz0CpjR8rQkeUH72A==
 
+"@stripe/stripe-js@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.5.0.tgz#95540ebadd40875fb5c36c64df366ca370fb987e"
+  integrity sha512-KCctMhOYCKtyXf0lnO7D+1aHRC566LQf2I490GqvLHhgjGfzf4O44eUXZsOi5IxJkJTtcCBtxKYXXlwuDif/KA==
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
