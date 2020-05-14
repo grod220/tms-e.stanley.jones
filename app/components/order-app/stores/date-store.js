@@ -1,19 +1,19 @@
-import { observable, decorate, reaction } from 'mobx';
+import { observable, reaction } from 'mobx';
 import { isBefore, isSunday } from 'date-fns';
 import {
   getNextAvailableFulfillmentDate,
-  parseHTMLDateStr,
-  withinOpeningHours,
-  withinLeadTime,
-  parseHTMLDateAndTime,
   isDateInPast,
+  parseHTMLDateAndTime,
+  parseHTMLDateStr,
+  withinLeadTime,
+  withinOpeningHours,
 } from './date-utils';
 
 class DateStore {
-  fulfillmentDate;
-  fulfillmentDateError;
-  fulfillmentTime;
-  fulfillmentTimeError;
+  @observable fulfillmentDate;
+  @observable fulfillmentDateError;
+  @observable fulfillmentTime;
+  @observable fulfillmentTimeError;
 
   constructor() {
     reaction(
@@ -61,12 +61,5 @@ class DateStore {
     }
   }
 }
-
-decorate(DateStore, {
-  fulfillmentDate: observable,
-  fulfillmentDateError: observable,
-  fulfillmentTime: observable,
-  fulfillmentTimeError: observable,
-});
 
 export default DateStore;
