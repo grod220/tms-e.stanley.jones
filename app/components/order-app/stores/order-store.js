@@ -19,7 +19,7 @@ class OrderStore {
   }
 
   @observable orderType;
-  activeTab;
+  @observable activeTab;
   fulfillmentOption;
 
   _validatedNumberOfGuests = 0;
@@ -135,8 +135,6 @@ class OrderStore {
 }
 
 decorate(OrderStore, {
-  activeTab: observable,
-  // orderType: observable,
   shoppingCart: observable,
   fulfillmentOption: observable,
   contactName: observable,

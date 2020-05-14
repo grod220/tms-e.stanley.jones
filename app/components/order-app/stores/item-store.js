@@ -1,4 +1,4 @@
-import { observable, decorate, computed } from 'mobx';
+import { computed, observable } from 'mobx';
 
 function countChoices(choices, type) {
   return Object.values(choices).filter((choicesArr) => choicesArr.filter((choice) => choice[type]).length).length;
@@ -11,12 +11,13 @@ function additionsFulfilled(choices, additionsRequired) {
 }
 
 class ItemStore {
-  dishName;
-  basePrice;
-  choices = {};
-  selectionsRequired = 0;
-  additionsRequired = {};
+  @observable dishName;
+  @observable basePrice;
+  @observable choices = {};
+  @observable selectionsRequired = 0;
+  @observable additionsRequired = {};
 
+  @computed
   get total() {
     const extraCosts = Object.values(this.choices)
       .flat()
@@ -25,6 +26,7 @@ class ItemStore {
     return this.basePrice + extraCosts;
   }
 
+  @computed
   get readyForCart() {
     return (
       this.selectionsRequired === countChoices(this.choices, 'selection') &&
@@ -32,14 +34,5 @@ class ItemStore {
     );
   }
 }
-
-decorate(ItemStore, {
-  dishName: observable,
-  selectionsRequired: observable,
-  additionsRequired: observable,
-  total: computed,
-  readyForCart: computed,
-  choices: observable,
-});
 
 export default ItemStore;

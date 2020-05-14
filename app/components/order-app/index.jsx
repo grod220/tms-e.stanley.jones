@@ -7,10 +7,8 @@ import OrderMenu from './order-menu';
 import OrderStore from './stores/order-store';
 import Checkout from './checkout';
 import { getNextAvailableFulfillmentDateStr, getNextAvailableFulfillmentTimeStr } from './stores/date-utils';
-import { toJS } from 'mobx';
 
 const initializeModule = (catering) => {
-  console.log('initializeModule');
   if ((catering && OrderStore.orderType !== 'catering') || (!catering && OrderStore.orderType !== 'normal')) {
     OrderStore.shoppingCart = []; // clear cart
   }
@@ -32,7 +30,7 @@ const OrderApp = observer(({ catering }) => {
   return (
     <>
       <OrderNav />
-      {/*{OrderStore.activeTab && (OrderStore.activeTab === 'Checkout' ? <Checkout /> : <OrderMenu />)}*/}
+      {OrderStore.activeTab && (OrderStore.activeTab === 'Checkout' ? <Checkout /> : <OrderMenu />)}
     </>
   );
 });
