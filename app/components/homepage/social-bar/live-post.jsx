@@ -107,7 +107,7 @@ const loadImageIntoMemory = (imageUrl, setLoaded) => {
 
 const LivePost = () => {
   const { data = {} } = useFetch(
-    'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/routes/most-recent-post',
+    'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/function/facebook/most-recent-post',
     [],
   );
   const [imageLoaded, setImageLoaded] = useState(false);
