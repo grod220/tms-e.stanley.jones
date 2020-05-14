@@ -2,7 +2,7 @@ import Stripe from 'stripe';
 import StandardMenu from '../../app/components/shared/menu-data/standard-menu';
 // @ts-ignore
 import CateringMenu from '../../app/components/shared/menu-data/catering-menu';
-import { DishChoices, OrderRequest, ShoppingCart } from './order-types';
+import { DishChoices, OrderRequest, ShoppingCart } from '../../app/components/shared/menu-data/order-types';
 
 const formatDescription = (choices: DishChoices): string =>
   Object.values(choices)
