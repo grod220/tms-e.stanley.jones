@@ -85,7 +85,7 @@ export const formatPaymentIntentObj = (
       metaDataObj[`Item ${index + 1}`] = item;
     });
 
-  const paymentIntentObj = {
+  const paymentIntentObj: Stripe.Checkout.SessionCreateParams.PaymentIntentData = {
     metadata: metaDataObj,
   };
 
@@ -99,7 +99,14 @@ export const formatPaymentIntentObj = (
   return paymentIntentObj;
 };
 
-export const validateOrderOrThrow = ({ shoppingCart, orderType, tip, tax, deliveryFee, fulfillmentOption }) => {
+export const validateOrderOrThrow = ({
+  shoppingCart,
+  orderType,
+  tip,
+  tax,
+  deliveryFee,
+  fulfillmentOption,
+}: OrderRequest) => {
   console.log(
     JSON.stringify({
       shoppingCart,
@@ -110,7 +117,8 @@ export const validateOrderOrThrow = ({ shoppingCart, orderType, tip, tax, delive
       fulfillmentOption,
     }),
   );
-  if (tip < 0) {
+  const parsedTip = typeof tip === 'string' ? parseFloat(tip) : tip;
+  if (parsedTip < 0) {
     throw Error(`Tip is less than 0 zero`);
   }
 
@@ -128,18 +136,29 @@ export const validateOrderOrThrow = ({ shoppingCart, orderType, tip, tax, delive
     const matchingMenuItem = menuItems.find((menuItem) => menuItem.name === cartItem.dishName);
 
     if (!matchingMenuItem) {
-      throw Error(`${cartItem.name} :: Could not find this dish in the official menu`);
+      throw Error(`${cartItem.dishName} :: Could not find this dish in the official menu`);
     }
 
     if (cartItem.basePrice !== matchingMenuItem.price) {
-      throw Error(`${cartItem.name} :: basePrice doesn't match on client & server`);
+      throw Error(`${cartItem.dishName} :: basePrice doesn't match on client & server`);
     }
     let menuExtras = 0;
     if (cartItem.choices) {
       Object.entries(cartItem.choices).forEach(([optionName, choicesArr]) => {
+        if (!matchingMenuItem.options) {
+          throw Error(`matchingMenuItem: ${matchingMenuItem} :: doesn't have options`);
+        }
         const matchingOptionObj = matchingMenuItem.options.find((optionObj) => optionObj.name === optionName);
+
+        if (!matchingOptionObj) {
+          throw Error(`Option: ${optionName} :: doesn't exist on the server`);
+        }
+
         choicesArr.forEach(({ name, extra }) => {
           const matchingChoiceItem = matchingOptionObj.choices.find((choice) => choice.name === name);
+          if (!matchingChoiceItem) {
+            throw Error(`Choice: ${name} :: doesn't exist on the server`);
+          }
           if (matchingChoiceItem.extra) {
             menuExtras += matchingChoiceItem.extra;
           }
@@ -157,7 +176,7 @@ export const validateOrderOrThrow = ({ shoppingCart, orderType, tip, tax, delive
     orderSubTotal += menuItemTotal;
   });
 
-  if (Math.floor(tax) !== Math.floor(orderSubTotal * 0.07)) {
+  if (Math.floor(parseFloat(tax)) !== Math.floor(orderSubTotal * 0.07)) {
     throw Error(`Tax doesn't match on client & server`);
   }
 };

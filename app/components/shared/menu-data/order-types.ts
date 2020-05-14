@@ -11,4 +11,9 @@ export interface OrderRequest {
   specialInstructions: string;
   fulfillmentOption: string;
   shoppingCart: ShoppingCart;
+  deliveryLocation: string;
+  numberOfGuests: string;
+  tip: string | number;
+  tax: string;
+  deliveryFee: number;
 }
