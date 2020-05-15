@@ -28,6 +28,7 @@
     "file-loader": "^6.0.0",
     "firebase-functions-test": "^0.2.0",
     "firebase-tools": "^8.2.0",
+    "image-webpack-loader": "^6.0.0",
     "ts-loader": "^7.0.4",
     "tslint": "^6.1.2",
     "typescript": "^3.8.0",

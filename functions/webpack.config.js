@@ -1,5 +1,5 @@
-const { fileLoader } = require('../app/next.config');
 const nodeExternals = require('webpack-node-externals');
+const { imageOptimizerLoader } = require('../app/next.config');
 
 module.exports = {
   entry: './src/index.ts',
@@ -17,7 +17,7 @@ module.exports = {
           transpileOnly: true,
         },
       },
-      fileLoader,
+      imageOptimizerLoader,
     ],
   },
   resolve: {
