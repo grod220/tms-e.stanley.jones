@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+import LazyLoad from 'react-lazyload';
+
 import Overlay from '../components/homepage/modal-overlay';
 import BigHero from '../components/homepage/big-hero';
 import OrderBar from '../components/homepage/order-bar';
@@ -24,13 +26,27 @@ export default function Index() {
       <Overlay />
       <BigHero />
       <OrderBar />
-      <SocialBar />
-      <MenuPreview />
-      <TestimonialTaster />
-      <LaDifferenzaPromo />
-      <Map />
-      <Passion />
-      <Footer />
+      <LazyLoad height={350}>
+        <SocialBar />
+      </LazyLoad>
+      <LazyLoad height={400}>
+        <MenuPreview />
+      </LazyLoad>
+      <LazyLoad height={350}>
+        <TestimonialTaster />
+      </LazyLoad>
+      <LazyLoad height={400}>
+        <LaDifferenzaPromo />
+      </LazyLoad>
+      <LazyLoad height={450}>
+        <Map />
+      </LazyLoad>
+      <LazyLoad height={400}>
+        <Passion />
+      </LazyLoad>
+      <LazyLoad height={160}>
+        <Footer />
+      </LazyLoad>
     </div>
   );
 }
