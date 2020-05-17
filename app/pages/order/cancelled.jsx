@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import ShortHero from '../../components/shared/short-hero';
 import FamilyStorePic from '../../components/about-us/family-drone-pic.jpg';
+import Highlight from '../../components/shared/highlight';
+import Link from 'next/link';
 
 const Container = styled.div`
   display: flex;
@@ -33,6 +35,13 @@ export default function Cancelled() {
             </span>
           </Headline>
           <div>Feel free to try again</div>
+          <Link href="/order/pickup">
+            <a>
+              <Highlight underline i>
+                <h3>Start a new pickup order</h3>
+              </Highlight>
+            </a>
+          </Link>
         </div>
       </Container>
     </div>

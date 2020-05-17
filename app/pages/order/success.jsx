@@ -28,7 +28,7 @@ export default function Success() {
         <div>
           <Headline>
             Your order was a success{' '}
-            <span role="img" aria-label="thums up">
+            <span role="img" aria-label="thumbs up">
               👍
             </span>
           </Headline>
