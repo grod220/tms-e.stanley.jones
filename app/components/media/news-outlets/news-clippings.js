@@ -12,7 +12,7 @@ export default [
     name: 'fm96.9: The Game',
     image: TheGame,
     audio:
-      'https://firebasestorage.googleapis.com/v0/b/the-meatball-stoppe.appspot.com/o/wygm.mp3?alt=media&token=9c772467-af8b-470e-803c-05530868745d',
+      'https://firebasestorage.googleapis.com/v0/b/tms-e-stanley-jones.appspot.com/o/wygm.mp3?alt=media&token=ec93f16c-cdaa-4ea8-a90f-3473e48bcc59',
     text: "You know it's real italian when the lady gives you a hug and a kiss on the cheek.",
   },
   {
@@ -41,7 +41,7 @@ export default [
     name: 'Real Radio 104.1',
     image: RealRadio,
     audio:
-      'https://firebasestorage.googleapis.com/v0/b/the-meatball-stoppe.appspot.com/o/PrimetimeKitchenInterview.mp3?alt=media&token=c7e90421-1cc9-4e5c-b048-e1fd8b696de6',
+      'https://firebasestorage.googleapis.com/v0/b/tms-e-stanley-jones.appspot.com/o/PrimetimeKitchenInterview.mp3?alt=media&token=f9711abf-fa06-4692-848c-66eed21d95c1',
     text:
       'The chicken meatball, buffalo style, balanced with blue cheese on top––that with the white-bean ragout is crazy killer.',
   },
