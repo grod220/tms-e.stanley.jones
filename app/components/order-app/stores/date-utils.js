@@ -78,8 +78,10 @@ export const getNextAvailableFulfillmentDate = () => {
   const leadTimeHours = leadTimesInMinutes[OrderStore.orderType][OrderStore.fulfillmentOption] / 60;
   if (getHours(today) + leadTimeHours < openingHours[getDayOfWeekStr(today)].close) {
     return startOfToday();
+  } else if (isSunday(startOfTomorrow())) {
+    return addDays(startOfToday(), 2);
   } else {
-    return isSunday(startOfTomorrow()) ? addDays(startOfToday(), 2) : startOfTomorrow();
+    return startOfTomorrow();
   }
 };
 
@@ -105,7 +107,7 @@ export const getNextAvailableFulfillmentTimeStr = () => {
   const roundedPlusLeadTime = roundToNearestMinutes(addMinutes(now, leadTimeMinutes), { nearestTo: 5 });
   if (withinOpeningHours(roundedPlusLeadTime)) {
     return format(roundedPlusLeadTime, 'HH:mm');
-  } else if (isBeforeOpeningToday(roundedPlusLeadTime)) {
+  } else if (isBeforeOpeningToday(roundedPlusLeadTime) && !isSunday(now)) {
     const todayStr = getDayOfWeekStr(startOfToday());
     const openingHour = openingHours[todayStr].open;
     return format(setHours(startOfToday(), openingHour), 'HH:mm');
