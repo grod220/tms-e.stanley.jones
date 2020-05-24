@@ -62,13 +62,11 @@ export default function Overlay() {
       <BlurredBackground onClick={() => setOpen(false)}>
         <Modal onClick={(e) => e.stopPropagation()}>
           <X onClick={() => setOpen(false)}>X</X>
-          <WelcomeTitle>Happy Memorial Day,</WelcomeTitle>
+          <WelcomeTitle>Happy Memorial Day</WelcomeTitle>
           <p>
-            In these very challenging times, TMS, is doing all we can to keep us all safe. We now have Curbside Pickup
-            available all day. We are happy to walk your order out to the curb of our front door. Options:
-          </p>
-          <p>
-            We open again <b>Tuesday</b>. See you then famiglia!
+            To all of The Meatball Stoppe Famiglia! We will be closed Monday to allow time for our celebration of past
+            and present hero’s. <b>We will reopen Tuesday at 11am</b> and we’d be honored to serve you in our newly
+            remodeled dining room. Curbside pickup and Delivery is our norm.
           </p>
           <p>
             <i>— Jeff & Isabella Morgia</i>
