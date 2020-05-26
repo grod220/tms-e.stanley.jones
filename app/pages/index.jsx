@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import LazyLoad from 'react-lazyload';
 
-import Overlay, { onOrBeforeMemorialDay } from '../components/homepage/modal-overlay';
 import BigHero from '../components/homepage/big-hero';
 import OrderBar from '../components/homepage/order-bar';
 import SocialBar from '../components/homepage/social-bar';
@@ -23,7 +22,7 @@ export default function Index() {
           content="An authentic Italian restaurant loved by Guy Fieri & the entire community. Orlando's #1 ranked most family-friendly restaurant by USA Today."
         />
       </Head>
-      {onOrBeforeMemorialDay && <Overlay />}
+      {/*{onOrBeforeMemorialDay && <Overlay />} buggy...*/}
       <BigHero />
       <OrderBar />
       <LazyLoad height={350}>
