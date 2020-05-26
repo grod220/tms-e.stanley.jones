@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '../../utilities/media';
 import Link from 'next/link';
-import { onOrBeforeMemorialDay } from './modal-overlay';
 
 const RedBar = styled.div`
   background: #902e2d;
@@ -87,22 +86,19 @@ const Announcement = styled.h3`
 const OrderBar = () => (
   <RedBar>
     <Container>
-      {onOrBeforeMemorialDay ? (
-        <Announcement>⚠️ Closed for Memorial Day</Announcement>
-      ) : (
-        <>
-          <Link href="/order">
-            <a>
-              <WhiteButton>Order Online</WhiteButton>
-            </a>
-          </Link>
-          <Link href="/order/catering">
-            <a>
-              <RedButton>Order Catering</RedButton>
-            </a>
-          </Link>
-        </>
-      )}
+      {/*{onOrBeforeMemorialDay ? (*/}
+      {/*  <Announcement>⚠️ Closed for Memorial Day</Announcement>*/}
+      {/*) : (*/}
+      <Link href="/order">
+        <a>
+          <WhiteButton>Order Online</WhiteButton>
+        </a>
+      </Link>
+      <Link href="/order/catering">
+        <a>
+          <RedButton>Order Catering</RedButton>
+        </a>
+      </Link>
     </Container>
   </RedBar>
 );
